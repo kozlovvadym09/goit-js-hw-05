@@ -1,33 +1,27 @@
 'use strict'
-
-const inventory = {
-   items: ['Knife', 'Gas mask'],
-   
-   add(itemName) {
-      
-      console.log(`Adding ${itemName} to inventory`);
-      
-    this.items.push(itemName);
-  },
-  remove(itemName) {
-    console.log(`Removing ${itemName} from inventory`);
-
-    this.items = this.items.filter(item => item !== itemName);
-  },
+class User {
+   constructor({name, age, followers}) {
+      this.name = name;
+      this.age = age;
+      this.followers = followers;
+   }
+   getInfo() {
+   console.log(`User ${this.name} is ${this.age} years old and has ${this.followers} followers`);
+   }   
 };
 
-const invokeInventoryAction = function(itemName, action) {
-  console.log(`Invoking action on ${itemName}`);
-   action.call(this, itemName);
-  
-};
+const mango = new User({
+  name: 'Mango',
+  age: 2,
+  followers: 20,
+});
 
-invokeInventoryAction.call(inventory, 'Medkit', inventory.add);
+mango.getInfo(); 
 
+const poly = new User({
+  name: 'Poly',
+  age: 3,
+  followers: 17,
+});
 
-console.log(inventory.items); 
-
-invokeInventoryAction.call(inventory, 'Gas mask', inventory.remove);
-
-
-console.log(inventory.items); 
+poly.getInfo();
