@@ -6,7 +6,7 @@
 
 Account.prototype.getInfo = function () {
 
-  console.log(`${this.login} ${this.email}`); 
+  console.log(`Login: ${this.login} Email: ${this.email}`); 
 };
 
 console.log(Account.prototype.getInfo);

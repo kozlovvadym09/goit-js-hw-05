@@ -1,8 +1,8 @@
 'use stirct'
 class Car {
 
-static getSpecs(car) {
-      console.log(car);
+   static getSpecs(car) {
+      console.log(`maxSpeed: ${car.maxSpeed}, speed: ${car.speed}, isOn: ${car.isOn}, distance: ${car.distance}, price: ${car.price}`);  
    }
    
    constructor(object) {
@@ -31,13 +31,13 @@ static getSpecs(car) {
   }
 
    accelerate(value) {
-      if (this.speed + value < this.maxSpeed) {
+      if (this.speed + value <= this.maxSpeed) {
          this.speed += value;
      }
   }
 
    decelerate(value) {
-     if (this.speed - value > 0) {
+     if (this.speed - value >= 0) {
          this.speed = this.speed - value;
      }
   }

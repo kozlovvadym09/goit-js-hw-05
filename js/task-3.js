@@ -10,13 +10,13 @@ class Storage {
    }
    
    addItem(item) {
-      return items.push(item);
+      return this.items.push(item);
    }
    
    removeItem(item) {
-      let index = this.items.indexOf(item);
+      const index = this.items.indexOf(item);
       if (index > -1) {
-         return this.items.splice(index, 1);
+         this.items.splice(index, 1);
       }
    }
 }
